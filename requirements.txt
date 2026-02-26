@@ -48,7 +48,7 @@ python-magic>=0.4.27  # File type detection
 json-logic>=0.6.3  # JSON Logic for conditional form logic
 
 # MVP 1: Enhanced Authentication & Security
-bcrypt>=4.1.0  # Password hashing
+bcrypt>=4.0.1  # Password hashing
 python-jose[cryptography]>=3.3.0  # Enhanced JWT with cryptography support
 passlib[bcrypt]>=1.7.4  # Password context with bcrypt support
 
