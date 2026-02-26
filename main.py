@@ -50,8 +50,8 @@ logger = logging.getLogger("daakyi-compaas-main")
 async def ensure_platform_admin():
     """Ensure the platform administrator exists upon startup"""
     try:
-        email = os.environ.get("PLATFORM_ADMIN_EMAIL", "admin@daakyi.com")
-        password = os.environ.get("PLATFORM_ADMIN_PASSWORD", "1234567890")
+        email = "admin@daakyi.com"
+        password = "1234567890"
 
         # 1. Ensure Platform Organization exists
         platform_org = await DatabaseOperations.find_one("mvp1_organizations", {"name": "DAAKYI Platform"})
