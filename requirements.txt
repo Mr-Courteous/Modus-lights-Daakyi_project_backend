@@ -58,7 +58,11 @@ python-multipart>=0.0.9  # File upload support
 
 # Tokuro AI Dependencies - DAAKYI's Proprietary AI Engine
 openai==1.7.2
+# tiktoken is required by tokuro_engine_py_a
+# see tokuro_ai_engine.py imports
+tiktoken>=0.6.0
 filetype==1.2.0
 scikit-learn>=1.5.0 # Machine learning library for Tokuro AI
+
 
  
