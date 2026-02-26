@@ -1,0 +1,23 @@
+framework_info:
+  name: "GDPR Compliance Framework"
+  version: "2018"
+  reference: "GDPR"
+
+controls:
+  - control_id: "Art.5.1.a"
+    name: "Lawfulness, fairness and transparency"
+    description: "Personal data shall be processed lawfully, fairly and in a transparent manner"
+    category: "Data Processing Principles"
+    reference_standard: "GDPR"
+    
+  - control_id: "Art.5.1.b"
+    name: "Purpose limitation"
+    description: "Personal data shall be collected for specified, explicit and legitimate purposes"
+    category: "Data Processing Principles"
+    reference_standard: "GDPR"
+    
+  - control_id: "Art.25.1"
+    name: "Data protection by design and by default"
+    description: "The controller shall implement appropriate technical and organisational measures"
+    category: "Data Protection by Design"
+    reference_standard: "GDPR"

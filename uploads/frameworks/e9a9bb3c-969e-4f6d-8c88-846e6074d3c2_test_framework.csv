@@ -1,0 +1,5 @@
+Control ID,Control Name,Description,Category,Reference Standard,Tags
+PR.AC-1,Identity and access management,Identities and credentials are issued managed verified revoked,Access Control,NIST CSF 2.0,Identity;Access
+PR.AC-2,Physical access to assets is managed,Physical access to assets is managed and protected,Access Control,NIST CSF 2.0,Physical;Access
+PR.AC-3,Remote access is managed,Remote access is managed,Access Control,NIST CSF 2.0,Remote;Access
+PR.DS-1,Data-at-rest is protected,Data-at-rest is protected,Data Security,NIST CSF 2.0,Data;Encryption

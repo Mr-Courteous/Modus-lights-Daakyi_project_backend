@@ -1,0 +1,5 @@
+Control ID,Control Name,Description,Category,Reference Standard,Tags
+A.5.1.1,Policies for information security,A set of policies for information security shall be defined and approved by management,Organizational security,ISO 27001:2022,Policy;Governance
+A.5.1.2,Information security roles and responsibilities,Information security roles and responsibilities shall be defined and allocated,Organizational security,ISO 27001:2022,Roles;Governance
+A.6.1.1,Information security policy,An information security policy shall be defined and approved by management,Access control,ISO 27001:2022,Policy;Access
+A.6.1.2,Access to networks and network services,Users shall only be provided with access to the network and network services,Access control,ISO 27001:2022,Access;Network
