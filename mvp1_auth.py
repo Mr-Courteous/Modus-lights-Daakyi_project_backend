@@ -44,7 +44,20 @@ class MVP1AuthService:
     
     @staticmethod
     def hash_password(password: str) -> str:
-        """Hash password using bcrypt"""
+        """Hash password using bcrypt.
+
+        Bcrypt has a hard limit of 72 bytes; passlib will raise an error if the
+        input exceeds that.  To avoid startup failures (see the platform admin
+        creation code) we proactively truncate any incoming password to 72
+        bytes.  This mirrors the suggestion in the error message and ensures
+        callers don't need to remember the limitation.
+        """
+        # passlib/bcrypt only cares about the *bytes* length, not the number of
+        # characters.  UTF-8 is used throughout the codebase, so count its
+        # encoded size before truncating.
+        pw_bytes = password.encode('utf-8')
+        if len(pw_bytes) > 72:
+            password = pw_bytes[:72].decode('utf-8', errors='ignore')
         return pwd_context.hash(password)
     
     @staticmethod
