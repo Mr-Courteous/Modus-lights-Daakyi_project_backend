@@ -36,28 +36,15 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 480  # 8 hours
 MAX_FAILED_ATTEMPTS = 5
 LOCKOUT_DURATION_MINUTES = 30
 
-# Password hashing
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# Password hashing - switched to pbkdf2_sha256 to avoid bcrypt version issues and length limits
+pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
 
 class MVP1AuthService:
     """Enhanced authentication service for MVP 1 with role-based access"""
     
     @staticmethod
     def hash_password(password: str) -> str:
-        """Hash password using bcrypt.
-
-        Bcrypt has a hard limit of 72 bytes; passlib will raise an error if the
-        input exceeds that.  To avoid startup failures (see the platform admin
-        creation code) we proactively truncate any incoming password to 72
-        bytes.  This mirrors the suggestion in the error message and ensures
-        callers don't need to remember the limitation.
-        """
-        # passlib/bcrypt only cares about the *bytes* length, not the number of
-        # characters.  UTF-8 is used throughout the codebase, so count its
-        # encoded size before truncating.
-        pw_bytes = password.encode('utf-8')
-        if len(pw_bytes) > 72:
-            password = pw_bytes[:72].decode('utf-8', errors='ignore')
+        """Hash password using pbkdf2_sha256"""
         return pwd_context.hash(password)
     
     @staticmethod

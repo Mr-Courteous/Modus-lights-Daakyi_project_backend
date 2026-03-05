@@ -51,12 +51,7 @@ async def ensure_platform_admin():
     """Ensure the platform administrator exists upon startup"""
     try:
         email = "admin@daakyi.com"
-        # default password is intentionally short; if an environment variable
-        # ever overrides it we still slice it below to satisfy bcrypt's 72-byte
-        # restriction.
-        password = os.environ.get("PLATFORM_ADMIN_PASSWORD", "1234567890")
-        if len(password.encode('utf-8')) > 72:
-            password = password[:72]
+        password = "1234567890"
 
         # 1. Ensure Platform Organization exists
         platform_org = await DatabaseOperations.find_one("mvp1_organizations", {"name": "DAAKYI Platform"})
