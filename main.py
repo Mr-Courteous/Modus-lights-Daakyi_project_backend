@@ -104,7 +104,7 @@ async def ensure_platform_admin():
         logger.error(f"Error ensuring platform admin: {str(e)}")
 
 
-# 2. Lifecycle Management
+# 2. Lifecycle Managementsss
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: Connect to MongoDB
