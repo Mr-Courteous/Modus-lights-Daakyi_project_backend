@@ -51,7 +51,7 @@ async def ensure_platform_admin():
     """Ensure the platform administrator exists upon startup"""
     try:
         email = "admin@daakyi.com"
-        password = "1234567890"
+        password = "Xgg$3l3nght!"
 
         # 1. Ensure Platform Organization exists
         platform_org = await DatabaseOperations.find_one("mvp1_organizations", {"name": "DAAKYI Platform"})
